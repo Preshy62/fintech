@@ -1,0 +1,159 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+
+
+<!-- Mirrored from pixner.net/paylio/paylio-v2/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 30 Jan 2025 05:25:20 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>People Bank Login</title>
+
+    <link rel="shortcut icon" href="assets/img/fav.png" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/plugin/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/plugin/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/custom-family.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/plugin/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/plugin/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style-rtl.min.css' %}" id="rtl-stylesheet" disabled>
+</head>
+
+<body>
+
+ <h2>Scan QR Code with Google Authenticator</h2>
+<img src="{{ qr_code }}" alt="QR Code">
+
+<form method="post">
+    {% csrf_token %}
+    <label>Enter the 6-digit code from Google Authenticator:</label>
+    <input type="text" name="code" required>
+    <button type="submit">Enable Google Auth</button>
+</form>
+
+   
+    <section class="log-reg">
+        <div class="overlay pb-120">
+            <div class="container">
+                <div class="top-head-area">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-sm-5 col">
+                            <a class="back-home" href="index.html">
+                                <img src="{% static 'assets/img/left-icon.png' %}" alt="image">
+                                Back To People Bank
+                            </a>
+                        </div>
+                        <div class="col-sm-5 col">
+                            <a href="index.html">
+                                <img src="{% static 'assets/logo/logo.png' %}" alt="image" width="150px">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <div class="form-box">
+                            <h4>Log in to People Bank</h4>
+                            <p class="dont-acc">Don't have an account? <a href="register.html">Register</a></p>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="personal-tab" data-bs-toggle="tab"
+                                        data-bs-target="#personal" type="button" role="tab" aria-controls="personal"
+                                        aria-selected="true">Personal</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="business-tab" data-bs-toggle="tab" data-bs-target="#business"
+                                        type="button" role="tab" aria-controls="business"
+                                        aria-selected="false">Business</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="personal-tab">                                
+                                    <form action="#">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="single-input d-flex align-items-center">
+                                                    <input type="email" placeholder="Email">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="single-input d-flex align-items-center">
+                                                    <input type="password" class="passInput" placeholder="Password">
+                                                    <img class="showPass" src="{% static 'assets/img/show-hide.png' %}" alt="image">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="btn-area">
+                                            <button class="cmn-btn">Log in</button>
+                                        </div>
+                                    </form>
+                                    <div class="form-bottom">
+                                        <div class="continue"><p>Or continue with</p></div>
+                                        <div class="login-with d-flex align-items-center">
+                                            <a href="javascript:void(0)"><img src="{% static 'assets/img/google.png' %}" alt="image"></a>
+                                            <a href="javascript:void(0)"><img src="{% static 'assets/img/fb.png' %}" alt="image"></a>
+                                        </div>
+                                        <div class="forget-pw">
+                                            <a href="forgot-password-2.html">Forgot your password?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="business" role="tabpanel" aria-labelledby="business-tab">
+                                    <form action="#">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="single-input d-flex align-items-center">
+                                                    <input type="email" placeholder="Business email">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="single-input d-flex align-items-center">
+                                                    <input type="password" class="passInput" placeholder="Password">
+                                                    <img class="showPass" src="{% static 'assets/img/show-hide.png' %}" alt="image">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="btn-area">
+                                            <button class="cmn-btn">Log in</button>
+                                        </div>
+                                    </form>
+                                    <div class="form-bottom">
+                                        <div class="continue"><p>Or continue with</p></div>
+                                        <div class="login-with d-flex align-items-center">
+                                            <a href="javascript:void(0)"><img src="{% static 'assets/img/google.png' %}" alt="image"></a>
+                                            <a href="javascript:void(0)"><img src="{% static 'assets/img/fb.png' %}" alt="image"></a>
+                                        </div>
+                                        <div class="forget-pw">
+                                            <a href="forgot-password.html">Forgot your password?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Login Reg In end -->
+
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/proper-min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/fontawesome.js' %}"></script>
+    <script src="{% static 'assets/js/plugin/slick.js' %}"></script>
+    <script src="{% static 'assets/js/plugin/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugin/apexcharts.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugin/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugin/jquery.countdown.js' %}"></script>
+    <script src="{% static 'assets/js/plugin/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugin/plugin.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+
+<!-- Mirrored from pixner.net/paylio/paylio-v2/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 30 Jan 2025 05:25:21 GMT -->
+</html>
